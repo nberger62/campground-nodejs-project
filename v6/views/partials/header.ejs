@@ -18,9 +18,22 @@
                 <li><a class="nav-item nav-link" href="/login">Login</a></li>
                 <li><a class="nav-item nav-link" href="/register">Sign Up</a></li>
             <% } else { %>
-                <li class="img-thumbnail" style="background: darkgrey"><a>Signed In As <%= currentUser.username %></a></li>
+                    <li><div class="btn btn-primary"><a>Signed In As <%= currentUser.username %></a></div></li>
                 <li><a class="nav-item nav-link" href="/logout">Logout</a></li>
             <% } %>
         </div>
     </div>
 </nav>
+
+<div class="container">
+    <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+    <% } %>
+    <% if(success && success.length > 0){ %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+    <% } %>
+</div>
